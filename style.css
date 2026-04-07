@@ -1,0 +1,39 @@
+:root {
+    --primary: #38bdf8;
+    --dark: #0f172a;
+    --light-dark: #1e293b;
+    --text: #f8fafc;
+    --gray: #94a3b8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+body { background: var(--dark); color: var(--text); font-family: 'Segoe UI', sans-serif; line-height: 1.6; }
+
+nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 10%; background: rgba(15, 23, 42, 0.9); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid #334155; }
+.logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); letter-spacing: 2px; }
+nav ul { display: flex; list-style: none; gap: 30px; }
+nav a { text-decoration: none; color: var(--text); font-weight: 500; transition: 0.3s; }
+nav a:hover { color: var(--primary); }
+
+header { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%); padding-top: 80px; }
+h1 { font-size: 4rem; margin-bottom: 20px; font-weight: 800; }
+.highlight { color: var(--primary); }
+header p { font-size: 1.2rem; color: var(--gray); margin-bottom: 30px; max-width: 600px; }
+
+.btn-primary { padding: 15px 35px; background: var(--primary); color: var(--dark); border-radius: 8px; text-decoration: none; font-weight: 700; margin-right: 15px; transition: 0.3s; }
+.btn-secondary { padding: 15px 35px; border: 1px solid var(--primary); color: var(--primary); border-radius: 8px; text-decoration: none; transition: 0.3s; }
+.btn-primary:hover { opacity: 0.8; transform: translateY(-3px); }
+
+#services { padding: 100px 10%; background: var(--light-dark); }
+.section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.card { background: var(--dark); padding: 40px; border-radius: 15px; border: 1px solid #334155; transition: 0.3s; }
+.card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
+.card:hover { border-color: var(--primary); transform: translateY(-10px); }
+
+#portfolio { padding: 100px 10%; }
+.portfolio-list { max-width: 700px; margin: 0 auto; }
+.asset-item { display: flex; justify-content: space-between; padding: 20px; background: var(--light-dark); margin-bottom: 15px; border-radius: 10px; border-left: 5px solid var(--primary); }
+.asset-item a { color: var(--primary); text-decoration: none; font-weight: bold; }
+
+footer { text-align: center; padding: 50px; border-top: 1px solid #334155; color: var(--gray); }
