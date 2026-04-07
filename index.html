@@ -1,48 +1,68 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shinwari Global | Strategic Ecommerce & Logistics</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-    </style>
+    <title>Shinwari Ecommerce | Premium Digital Assets</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-[#0a0a0b] text-white overflow-x-hidden">
-
-    <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center glass">
-        <div class="text-2xl font-extrabold tracking-tighter uppercase">
-            SHINWARI <span class="text-blue-500 text-3xl">.</span>
-        </div>
-        <div class="hidden md:flex gap-10 text-xs font-semibold tracking-[0.2em] uppercase opacity-70">
-            <a href="#services" class="hover:opacity-100 transition">Solutions</a>
-            <a href="#tech" class="hover:opacity-100 transition">Infrastructure</a>
-            <a href="#contact" class="hover:opacity-100 transition">Global Contact</a>
-        </div>
+<body>
+    <nav>
+        <div class="logo">SHINWARI</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact" class="btn-nav">Get Started</a></li>
+        </ul>
     </nav>
 
-    <section class="h-screen relative flex items-center px-8 md:px-24">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&q=80&w=2000" 
-                 class="w-full h-full object-cover opacity-30 grayscale" alt="Global Trade">
-            <div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0b] via-transparent to-transparent"></div>
+    <header id="home">
+        <div class="hero-content">
+            <h1>Mastering the <span class="highlight">Digital Domain</span> Economy</h1>
+            <p>Premium Domain Investing, Strategic Ecommerce Solutions, and High-Value Digital Assets.</p>
+            <div class="hero-btns">
+                <a href="#portfolio" class="btn-primary">View Domains</a>
+                <a href="#contact" class="btn-secondary">Contact Us</a>
+            </div>
         </div>
-        
-        <div class="relative z-10 max-w-4xl">
-            <h1 class="text-6xl md:text-8xl font-extrabold mb-8 tracking-tighter leading-none">
-                TRANSFORMING <br> <span class="text-blue-500">GLOBAL TRADE.</span>
-            </h1>
-            <p class="text-xl text-gray-400 max-w-xl font-light leading-relaxed mb-10">
-                Shinwari Group specializes in high-scale ecommerce logistics and AI-driven communication systems, bridging the gap between emerging markets and global infrastructure.
-            </p>
-            <div class="flex gap-6">
-                <a href="#contact" class="bg-blue-600 px-10 py-5 rounded-none font-bold uppercase tracking-widest text-xs hover:bg-blue-700 transition shadow-2xl">Partner with us</a>
+    </header>
+
+    <section id="services">
+        <h2 class="section-title">Our Expertise</h2>
+        <div class="services-grid">
+            <div class="card">
+                <i class="fas fa-globe"></i>
+                <h3>Domain Investing</h3>
+                <p>Curating and flipping high-potential digital real estate for global markets.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-shopping-cart"></i>
+                <h3>Ecommerce Strategy</h3>
+                <p>Scaling brands through data-driven ecommerce frameworks.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Market Analysis</h3>
+                <p>Deep-dive research into crypto and digital asset price performance.</p>
             </div>
         </div>
     </section>
 
+    <section id="portfolio">
+        <h2 class="section-title">Featured Assets</h2>
+        <div class="portfolio-list">
+            <div class="asset-item"><span>Logicvaultai.com</span> <a href="#">Inquire</a></div>
+            <div class="asset-item"><span>Factorypay.com</span> <a href="#">Inquire</a></div>
+            <div class="asset-item"><span>Shinwariecommerce.com</span> <a href="#">Current</a></div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>&copy; 2026 Shinwari Ecommerce. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
