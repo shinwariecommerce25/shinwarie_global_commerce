@@ -3,75 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHINWARI | Global Digital Assets</title>
+    <title>AssetFlow Premium | Specialized Domains</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
-    <nav>
-        <div class="logo">SHINWARI</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#portfolio">Assets</a></li>
-            <li><a href="#contact-info" class="btn-nav">Contact</a></li>
-        </ul>
-    </nav>
+<body id="main-body">
 
-    <header id="home">
-        <div class="hero-content">
-            <h1>Premium <span class="highlight">Digital Real Estate</span></h1>
-            <p>Specializing in AI-Driven Domains, LLM Technologies, and Global Ecommerce Infrastructure.</p>
-            <div class="hero-btns">
-                <a href="#portfolio" class="btn-primary">View Portfolio</a>
-                <a href="https://wa.me/17312734860" class="btn-secondary"><i class="fab fa-whatsapp"></i> WhatsApp Business</a>
+    <header>
+        <div class="container nav-content">
+            <a href="#" class="logo">Asset<span>Flow</span> Premium</a>
+            <div class="lang-switcher">
+                <button onclick="changeLanguage('en')" class="btn-lang active" id="btn-en">EN</button>
+                <button onclick="changeLanguage('ar')" class="btn-lang" id="btn-ar">AR</button>
+                <button onclick="changeLanguage('fr')" class="btn-lang" id="btn-fr">FR</button>
+                <button onclick="changeLanguage('es')" class="btn-lang" id="btn-es">ES</button>
+                <button onclick="changeLanguage('it')" class="btn-lang" id="btn-it">IT</button>
             </div>
         </div>
     </header>
 
-    <section id="portfolio">
-        <h2 class="section-title">Premium Assets Portfolio</h2>
-        <div class="portfolio-grid">
-            <div class="asset-card"><span>Logicvaultai.com</span><span class="tag">AI</span></div>
-            <div class="asset-card"><span>Logicvaultagent.com</span><span class="tag">Agent</span></div>
-            <div class="asset-card"><span>Agentswiftai.com</span><span class="tag">AI</span></div>
-            <div class="asset-card"><span>Brainpathagent.com</span><span class="tag">Agent</span></div>
-            <div class="asset-card"><span>Cyberpathai.com</span><span class="tag">Security</span></div>
-            <div class="asset-card"><span>Thepathagent.com</span><span class="tag">Agent</span></div>
-            <div class="asset-card"><span>Opticesai.com</span><span class="tag">AI</span></div>
-            <div class="asset-card"><span>Resetllm.com</span><span class="tag">LLM</span></div>
-            <div class="asset-card highlight-card"><span>Openpayagent.com</span><span class="tag blue">Fintech</span></div>
-            <div class="asset-card highlight-card"><span>Leapayai.com</span><span class="tag blue">Fintech</span></div>
-            <div class="asset-card highlight-card"><span>Leapxpay.com</span><span class="tag blue">Fintech</span></div>
-            <div class="asset-card"><span>Brainpromote.com</span><span class="tag gold">Growth</span></div>
-        </div>
-    </section>
+    <main class="container">
+        <section class="hero">
+            <h1 id="txt-hero-title">Specializing in AI-Driven Domains and Global Tech Infrastructure.</h1>
+            <div class="hero-btns">
+                <a href="#portfolio" id="txt-view-btn">View Portfolio</a>
+                <a href="https://wa.me/17312734860" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+        </section>
 
-    <section id="contact-info">
-        <div class="contact-container">
-            <h2 class="section-title">Connect with Us</h2>
-            <div class="contact-cards">
-                <a href="tel:+17312734860" class="c-box">
-                    <i class="fas fa-phone"></i>
-                    <span>Call Us</span>
-                    <p>+1 (731) 273-4860</p>
-                </a>
-                <a href="https://wa.me/17312734860" class="c-box">
+        <div id="portfolio-list"></div>
+    </main>
+
+    <section class="contact-area">
+        <div class="container">
+            <h2 id="txt-contact-title">Direct Acquisition</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <strong>Call Us</strong>
+                    <span>+1 (731) 273-4860</span>
+                </div>
+                <div class="contact-card">
                     <i class="fab fa-whatsapp"></i>
-                    <span>WhatsApp</span>
-                    <p>Business Chat</p>
-                </a>
-                <a href="mailto:contact@shinwariecommerce.com" class="c-box">
+                    <strong>WhatsApp</strong>
+                    <span>Business Chat</span>
+                </div>
+                <div class="contact-card">
                     <i class="fas fa-envelope"></i>
-                    <span>Email</span>
-                    <p>contact@shinwariecommerce.com</p>
-                </a>
+                    <strong>Email</strong>
+                    <span>sales@shinwariecommerce.com</span>
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 SHINWARI GLOBAL. All Rights Reserved.</p>
+        <div class="container">
+            <div class="legal-links">
+                <a href="#" id="txt-privacy">Privacy</a>
+                <a href="#" id="txt-refund">Refund</a>
+                <a href="#" id="txt-terms">Terms</a>
+            </div>
+            <p id="txt-copy">&copy; 2026 AssetFlow Premium. All Rights Reserved.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
