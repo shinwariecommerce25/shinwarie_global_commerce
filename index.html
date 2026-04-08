@@ -3,91 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AssetFlow Premium | Domain Portfolio</title>
+    <title>AssetFlow Premium | High-End Domains</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body id="body">
 
     <header>
-        <div class="container">
-            <div class="logo">AssetFlow<span>Premium</span></div>
+        <div class="container nav-content">
+            <a href="#" class="logo">Asset<span>Flow</span></a>
+            <div class="lang-switcher">
+                <button class="lang-btn active" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" onclick="setLang('ar')">AR</button>
+                <button class="lang-btn" onclick="setLang('fr')">FR</button>
+                <button class="lang-btn" onclick="setLang('es')">ES</button>
+            </div>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Premium AI & Fintech Domains</h1>
-            <p>Hand-picked digital assets for your next big project.</p>
+    <section class="hero container">
+        <div class="hero-text">
+            <h1 id="hero-title">Elevate Your <span>Digital Identity</span></h1>
+            <p id="hero-desc">Premium domains for the next generation of AI and Fintech pioneers.</p>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=1000" alt="Premium Tech">
         </div>
     </section>
 
-    <section class="portfolio">
-        <div class="container">
-            <div class="domains-grid">
-                <script>
-                    const domains = [
-                        { name: 'Logicvaultai.com', tag: 'AI Logic' },
-                        { name: 'Logicvaultagent.com', tag: 'AI Agents' },
-                        { name: 'Agentswiftai.com', tag: 'Automation' },
-                        { name: 'Brainpromote.com', tag: 'Marketing' },
-                        { name: 'Brainpathagent.com', tag: 'Neural Paths' },
-                        { name: 'Cyberpathai.com', tag: 'Security' },
-                        { name: 'Openpayagent.com', tag: 'Fintech' },
-                        { name: 'Leapayai.com', tag: 'Payments' },
-                        { name: 'Leapxpay.com', tag: 'Crypto' },
-                        { name: 'Opticesai.com', tag: 'Vision AI' },
-                        { name: 'Thepathagent.com', tag: 'Strategy' },
-                        { name: 'Resetllm.com', tag: 'LLM Services' }
-                    ];
-
-                    document.write(domains.map(d => 
-                        <div class="domain-card">
-                            <h3>${d.name}</h3>
-                            <span class="tag">${d.tag}</span>
-                            <div class="card-actions">
-                                <a href="https://sedo.com/search/details/?domain=${d.name}" target="_blank" class="buy-btn">Buy Now</a>
-                                <button class="offer-btn" onclick="openForm('${d.name}')">Make Offer</button>
-                            </div>
-                        </div>
-                    ).join(''));
-                </script>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 ASSETFLOW PREMIUM. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <div id="inquiryModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeForm()">&times;</span>
-            <h2 id="domainNameDisplay">Make an Offer</h2>
-            <form action="https://formspree.io/f/mykbagyq" method="POST">
-                <input type="hidden" name="domain" id="domainHiddenInput">
-                <input type="text" name="name" placeholder="Full Name" required>
-                <input type="email" name="email" placeholder="Email Address" required>
-                <input type="number" name="offer" placeholder="Your Offer ($)" required>
-                <textarea name="message" placeholder="Optional Message"></textarea>
-                <button type="submit" class="submit-btn">Send Offer</button>
-            </form>
-        </div>
+    <div class="container">
+        <h2 id="grid-title" style="text-align: center; margin-top: 50px;">Available Inventory</h2>
+        <div class="domains-grid" id="domainList"></div>
     </div>
 
-    <script>
-        function openForm(domain) {
-            document.getElementById('inquiryModal').style.display = "flex";
-            document.getElementById('domainNameDisplay').innerText = domain;
-            document.getElementById('domainHiddenInput').value = domain;
-        }
-        function closeForm() {
-            document.getElementById('inquiryModal').style.display = "none";
-        }
-        window.onclick = function(e) {
-            if (e.target == document.getElementById('inquiryModal')) closeForm();
-        }
-    </script>
-</body>
-</html>
+    <section class="contact-section">
+        <div class="container">
+            <h2 id="contact-title">Direct Acquisition</h2>
+            <div class="contact-grid">
+                <a href="https://wa.me/17312734860" class="contact-card whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    <strong>WhatsApp Business</strong>
+                    <span>+1 (731) 273-4860
