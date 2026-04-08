@@ -24,14 +24,16 @@ nav {
     border-bottom: 1px solid #1e293b; 
 }
 
+/* This section fixes the large logo size */
 .logo { 
     display: flex; 
     align-items: center; 
 }
 
 .logo-img { 
-    height: 45px; 
-    width: auto; 
+    height: 45px !important;  /* Forces the height */
+    width: auto !important;    /* Maintains aspect ratio */
+    max-width: 150px;         /* Caps the max width */
     transition: all 0.3s ease; 
 }
 
