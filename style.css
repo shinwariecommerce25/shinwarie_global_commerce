@@ -62,8 +62,10 @@ h1 { font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 900; line-height: 1.1; }
 .c-box span { display: block; font-weight: bold; margin-bottom: 5px; }
 .c-box p { color: var(--gray); font-size: 0.9rem; }
 
-footer { padding: 40px; text-align: center; border-top: 1px solid #1e293b; font-size: 0.8rem; color: #475569; }
-
+footer { padding: 40px; text-align: center; border-top: 1px solid #1e293b; background: #020617; }
+.legal-links { margin-top: 15px; display: flex; justify-content: center; gap: 20px; }
+.legal-links a { color: #94a3b8; text-decoration: none; font-size: 0.8rem; transition: 0.3s; }
+.legal-links a:hover { color: #38bdf8; }
 @media (max-width: 768px) {
     nav ul { display: none; }
     .btn-secondary { margin-left: 0; margin-top: 15px; }
