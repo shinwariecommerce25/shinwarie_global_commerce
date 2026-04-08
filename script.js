@@ -1,40 +1,50 @@
-const translations = {
-    en: {
-        heroTitle: "Elevate Your <span>Digital Identity</span>",
-        heroDesc: "Curated premium domains for AI and Fintech pioneers.",
-        gridTitle: "Available Portfolio", contactTitle: "Direct Acquisition",
-        buy: "Buy Now", offer: "Make Offer", modalTitle: "Make an Offer",
-        pName: "Full Name", pEmail: "Email", pOffer: "Amount ($)", pSubmit: "Submit Offer"
-    },
-    ar: {
-        heroTitle: "ارتقِ بهويتك <span>الرقمية</span>",
-        heroDesc: "نطاقات حصرية لرواد التكنولوجيا والذكاء الاصطناعي.",
-        gridTitle: "المجموعة المتاحة", contactTitle: "الاستحواذ المباشر",
-        buy: "شراء الآن", offer: "تقديم عرض", modalTitle: "قدم عرضك",
-        pName: "الاسم", pEmail: "الايميل", pOffer: "المبلغ ($)", pSubmit: "إرسال"
-    },
-    fr: {
-        heroTitle: "Identité <span>Numérique</span>",
-        heroDesc: "Domaines premium pour l'IA et la Fintech.",
-        gridTitle: "Portfolio Disponible", contactTitle: "Acquisition Directe",
-        buy: "Acheter", offer: "Offrir", modalTitle: "Faire une offre",
-        pName: "Nom", pEmail: "Email", pOffer: "Montant ($)", pSubmit: "Envoyer"
-    },
-    es: {
-        heroTitle: "Identidad <span>Digital</span>",
-        heroDesc: "Dominios premium para pioneros en IA.",
-        gridTitle: "Portafolio Disponible", contactTitle: "Adquisición",
-        buy: "Comprar", offer: "Oferta", modalTitle: "Hacer oferta",
-        pName: "Nombre", pEmail: "Email", pOffer: "Monto ($)", pSubmit: "Enviar"
-    }
-};
+document.addEventListener('DOMContentLoaded', () => {
+    // Smooth Scrolling for Navigation Links
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 
-const domains = [
-    "Shinwariecommerce.com", "Logicvaultai.com", "Factorypay.com", "Logicvaultagent.com", 
-    "Agentswiftai.com", "Brainpromote.com", "Brainpathagent.com", "Cyberpathai.com", 
-    "Openpayagent.com", "Leapayai.com", "Leapxpay.com", "Opticesai.com", 
-    "Thepathagent.com", "Resetllm.com"
-];
+    // Reveal Elements on Scroll
+    const revealOnScroll = () => {
+        const elements = document.querySelectorAll('.asset-card, .c-box, .section-title');
+        const windowHeight = window.innerHeight;
+
+        elements.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < windowHeight - 50) {
+                el.style.opacity = "1";
+                el.style.transform = "translateY(0)";
+                el.style.transition = "all 0.6s ease-out";
+            }
+        });
+    };
+
+    // Initial state for animation
+    const initAnimation = () => {
+        const elements = document.querySelectorAll('.asset-card, .c-box');
+        elements.forEach(el => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(20px)";
+        });
+    };
+
+    initAnimation();
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // Trigger once on load
+
+    console.log("SHINWARI GLOBAL | Logic Vault System Active");
+});];
 
 function setLang(lang) {
     const t = translations[lang];
