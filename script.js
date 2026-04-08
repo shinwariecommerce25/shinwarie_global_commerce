@@ -1,85 +1,83 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Smooth Scrolling for Navigation Links
-    document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AssetFlow Premium | Specialized Digital Real Estate</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body id="body">
+
+    <header>
+        <div class="container nav-content">
+            <a href="#" class="logo">
+                Asset<span>Flow</span> Premium
+            </a>
             
-            if (targetSection) {
-                window.scrollTo({
-                    top: targetSection.offsetTop - 70,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    // Reveal Elements on Scroll
-    const revealOnScroll = () => {
-        const elements = document.querySelectorAll('.asset-card, .c-box, .section-title');
-        const windowHeight = window.innerHeight;
-
-        elements.forEach(el => {
-            const elementTop = el.getBoundingClientRect().top;
-            if (elementTop < windowHeight - 50) {
-                el.style.opacity = "1";
-                el.style.transform = "translateY(0)";
-                el.style.transition = "all 0.6s ease-out";
-            }
-        });
-    };
-
-    // Initial state for animation
-    const initAnimation = () => {
-        const elements = document.querySelectorAll('.asset-card, .c-box');
-        elements.forEach(el => {
-            el.style.opacity = "0";
-            el.style.transform = "translateY(20px)";
-        });
-    };
-
-    initAnimation();
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); // Trigger once on load
-
-    console.log("SHINWARI GLOBAL | Logic Vault System Active");
-});];
-
-function setLang(lang) {
-    const t = translations[lang];
-    document.getElementById('hero-title').innerHTML = t.heroTitle;
-    document.getElementById('hero-desc').innerText = t.heroDesc;
-    document.getElementById('grid-title').innerText = t.gridTitle;
-    document.getElementById('contact-title').innerText = t.contactTitle;
-    document.getElementById('modal-title').innerText = t.modalTitle;
-    document.getElementById('p-name').placeholder = t.pName;
-    document.getElementById('p-email').placeholder = t.pEmail;
-    document.getElementById('p-offer').placeholder = t.pOffer;
-    document.getElementById('p-submit').innerText = t.pSubmit;
-
-    const grid = document.getElementById('domainList');
-    grid.innerHTML = domains.map(d => 
-        <div class="domain-card">
-            <h3>${d}</h3>
-            <div class="card-actions">
-                <a href="https://sedo.com/search/details/?domain=${d}" target="_blank" class="buy-btn">${t.buy}</a>
-                <button class="offer-btn" onclick="openForm('${d}')">${t.offer}</button>
+            <div class="lang-switcher">
+                <button onclick="setLang('en')" class="btn-lang active" id="btn-en">EN</button>
+                <button onclick="setLang('ar')" class="btn-lang" id="btn-ar">AR</button>
+                <button onclick="setLang('fr')" class="btn-lang" id="btn-fr">FR</button>
+                <button onclick="setLang('es')" class="btn-lang" id="btn-es">ES</button>
+                <button onclick="setLang('it')" class="btn-lang" id="btn-it">IT</button>
             </div>
         </div>
-    ).join('');
+    </header>
 
-    if(lang === 'ar') document.body.classList.add('rtl');
-    else document.body.classList.remove('rtl');
+    <main class="container">
+        <section class="hero">
+            <h1 id="hero-title">Specializing in AI-Driven Domains, LLM Technologies, and Global Ecommerce Infrastructure.</h1>
+            <div class="hero-links">
+                <a href="#portfolio" id="hero-portfolio-link">View Portfolio</a>
+                <a href="https://wa.me/17312734860" target="_blank" id="hero-whatsapp-link">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Business
+                </a>
+            </div>
+        </section>
 
-    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-    if(event) event.target.classList.add('active');
-}
+        <section id="portfolio" class="portfolio-section">
+            <h2 id="grid-title">Premium Assets Portfolio</h2>
+            <div id="portfolio-categories">
+                </div>
+        </section>
+    </main>
 
-function openForm(domain) {
-    document.getElementById('inquiryModal').style.display = "flex";
-    document.getElementById('domainHiddenInput').value = domain;
-}
-function closeForm() { document.getElementById('inquiryModal').style.display = "none"; }
+    <section class="contact">
+        <div class="container">
+            <h2 id="contact-title">Connect with Us</h2>
+            <div class="contact-grid">
+                <div class="contact-box CallUs">
+                    <i class="fas fa-phone-alt"></i>
+                    <strong>Call Us</strong>
+                    <span>+1 (731) 273-4860</span>
+                </div>
+                <div class="contact-box WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                    <strong>WhatsApp Business</strong>
+                    <span>Business Chat</span>
+                </div>
+                <div class="contact-box Email">
+                    <i class="fas fa-envelope-open-text"></i>
+                    <strong>Email</strong>
+                    <span>sales@shinwariecommerce.com</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-setLang('en');
+    <footer>
+        <div class="container footer-content">
+            <p id="footer-copy">&copy; 2026 AssetFlow Premium. All Rights Reserved.</p>
+            <div class="policy-links">
+                <a href="#" id="link-terms">Terms</a>
+                <a href="#" id="link-privacy">Privacy</a>
+                <a href="#" id="link-refund">Refund Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
