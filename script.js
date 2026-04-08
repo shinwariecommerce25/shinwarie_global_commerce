@@ -44,3 +44,4 @@ document.addEventListener('DOMContentLoaded', () => {
     revealOnScroll(); // Trigger once on load
 
     console.log("SHINWARI GLOBAL | Logic Vault System Active");
+});
