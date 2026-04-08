@@ -1,51 +1,65 @@
-<div class="card-actions">
-                        <a href="https://sedo.com/search/details/?domain=openpayagent.com" target="_blank" class="buy-btn">Buy Now</a>
-                        <button class="offer-btn" onclick="openForm('Openpayagent.com')">Make Offer</button>
-                    </div>
-                </div>
-                <div class="domain-card">
-                    <h3>Leapayai.com</h3>
-                    <span class="tag">Payments</span>
-                    <div class="card-actions">
-                        <a href="https://sedo.com/search/details/?domain=leapayai.com" target="_blank" class="buy-btn">Buy Now</a>
-                        <button class="offer-btn" onclick="openForm('Leapayai.com')">Make Offer</button>
-                    </div>
-                </div>
-                <div class="domain-card">
-                    <h3>Leapxpay.com</h3>
-                    <span class="tag">Crypto</span>
-                    <div class="card-actions">
-                        <a href="https://sedo.com/search/details/?domain=leapxpay.com" target="_blank" class="buy-btn">Buy Now</a>
-                        <button class="offer-btn" onclick="openForm('Leapxpay.com')">Make Offer</button>
-                    </div>
-                </div>
-                <div class="domain-card">
-                    <h3>Opticesai.com</h3>
-                    <span class="tag">Vision AI</span>
-                    <div class="card-actions">
-                        <a href="https://sedo.com/search/details/?domain=opticesai.com" target="_blank" class="buy-btn">Buy Now</a>
-                        <button class="offer-btn" onclick="openForm('Opticesai.com')">Make Offer</button>
-                    </div>
-                </div>
-                <div class="domain-card">
-                    <h3>Thepathagent.com</h3>
-                    <span class="tag">Strategy</span>
-                    <div class="card-actions">
-                        <a href="https://sedo.com/search/details/?domain=thepathagent.com" target="_blank" class="buy-btn">Buy Now</a>
-                        <button class="offer-btn" onclick="openForm('Thepathagent.com')">Make Offer</button>
-                    </div>
-                </div>
-                <div class="domain-card">
-                    <h3>Resetllm.com</h3>
-                    <span class="tag">LLM Services</span>
-                    <div class="card-actions">
-                        <a href="https://sedo.com/search/details/?domain=resetllm.com" target="_blank" class="buy-btn">Buy Now</a>
-                        <button class="offer-btn" onclick="openForm('Resetllm.com')">Make Offer</button>
-                    </div>
-                </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AssetFlow Premium | Domain Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">AssetFlow<span>Premium</span></div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Premium AI & Fintech Domains</h1>
+            <p>Hand-picked digital assets for your next big project.</p>
+        </div>
+    </section>
+
+    <section class="portfolio">
+        <div class="container">
+            <div class="domains-grid">
+                <script>
+                    const domains = [
+                        { name: 'Logicvaultai.com', tag: 'AI Logic' },
+                        { name: 'Logicvaultagent.com', tag: 'AI Agents' },
+                        { name: 'Agentswiftai.com', tag: 'Automation' },
+                        { name: 'Brainpromote.com', tag: 'Marketing' },
+                        { name: 'Brainpathagent.com', tag: 'Neural Paths' },
+                        { name: 'Cyberpathai.com', tag: 'Security' },
+                        { name: 'Openpayagent.com', tag: 'Fintech' },
+                        { name: 'Leapayai.com', tag: 'Payments' },
+                        { name: 'Leapxpay.com', tag: 'Crypto' },
+                        { name: 'Opticesai.com', tag: 'Vision AI' },
+                        { name: 'Thepathagent.com', tag: 'Strategy' },
+                        { name: 'Resetllm.com', tag: 'LLM Services' }
+                    ];
+
+                    document.write(domains.map(d => 
+                        <div class="domain-card">
+                            <h3>${d.name}</h3>
+                            <span class="tag">${d.tag}</span>
+                            <div class="card-actions">
+                                <a href="https://sedo.com/search/details/?domain=${d.name}" target="_blank" class="buy-btn">Buy Now</a>
+                                <button class="offer-btn" onclick="openForm('${d.name}')">Make Offer</button>
+                            </div>
+                        </div>
+                    ).join(''));
+                </script>
             </div>
         </div>
     </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 ASSETFLOW PREMIUM. All Rights Reserved.</p>
+        </div>
+    </footer>
 
     <div id="inquiryModal" class="modal">
         <div class="modal-content">
@@ -54,4 +68,26 @@
             <form action="https://formspree.io/f/mykbagyq" method="POST">
                 <input type="hidden" name="domain" id="domainHiddenInput">
                 <input type="text" name="name" placeholder="Full Name" required>
-                <input type="email" name="email
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="number" name="offer" placeholder="Your Offer ($)" required>
+                <textarea name="message" placeholder="Optional Message"></textarea>
+                <button type="submit" class="submit-btn">Send Offer</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openForm(domain) {
+            document.getElementById('inquiryModal').style.display = "flex";
+            document.getElementById('domainNameDisplay').innerText = domain;
+            document.getElementById('domainHiddenInput').value = domain;
+        }
+        function closeForm() {
+            document.getElementById('inquiryModal').style.display = "none";
+        }
+        window.onclick = function(e) {
+            if (e.target == document.getElementById('inquiryModal')) closeForm();
+        }
+    </script>
+</body>
+</html>
