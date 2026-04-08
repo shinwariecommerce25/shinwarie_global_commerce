@@ -3,44 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AssetFlow Premium | High-End Domains</title>
+    <title>SHINWARI | Global Digital Assets</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
-<body id="body">
+<body>
+    <nav>
+        <div class="logo">SHINWARI</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#portfolio">Assets</a></li>
+            <li><a href="#contact-info" class="btn-nav">Contact</a></li>
+        </ul>
+    </nav>
 
-    <header>
-        <div class="container nav-content">
-            <a href="#" class="logo">Asset<span>Flow</span></a>
-            <div class="lang-switcher">
-                <button class="lang-btn active" onclick="setLang('en')">EN</button>
-                <button class="lang-btn" onclick="setLang('ar')">AR</button>
-                <button class="lang-btn" onclick="setLang('fr')">FR</button>
-                <button class="lang-btn" onclick="setLang('es')">ES</button>
+    <header id="home">
+        <div class="hero-content">
+            <h1>Premium <span class="highlight">Digital Real Estate</span></h1>
+            <p>Specializing in AI-Driven Domains, LLM Technologies, and Global Ecommerce Infrastructure.</p>
+            <div class="hero-btns">
+                <a href="#portfolio" class="btn-primary">View Portfolio</a>
+                <a href="https://wa.me/17312734860" class="btn-secondary"><i class="fab fa-whatsapp"></i> WhatsApp Business</a>
             </div>
         </div>
     </header>
 
-    <section class="hero container">
-        <div class="hero-text">
-            <h1 id="hero-title">Elevate Your <span>Digital Identity</span></h1>
-            <p id="hero-desc">Premium domains for the next generation of AI and Fintech pioneers.</p>
-        </div>
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=1000" alt="Premium Tech">
+    <section id="portfolio">
+        <h2 class="section-title">Premium Assets Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="asset-card"><span>Logicvaultai.com</span><span class="tag">AI</span></div>
+            <div class="asset-card"><span>Logicvaultagent.com</span><span class="tag">Agent</span></div>
+            <div class="asset-card"><span>Agentswiftai.com</span><span class="tag">AI</span></div>
+            <div class="asset-card"><span>Brainpathagent.com</span><span class="tag">Agent</span></div>
+            <div class="asset-card"><span>Cyberpathai.com</span><span class="tag">Security</span></div>
+            <div class="asset-card"><span>Thepathagent.com</span><span class="tag">Agent</span></div>
+            <div class="asset-card"><span>Opticesai.com</span><span class="tag">AI</span></div>
+            <div class="asset-card"><span>Resetllm.com</span><span class="tag">LLM</span></div>
+            <div class="asset-card highlight-card"><span>Openpayagent.com</span><span class="tag blue">Fintech</span></div>
+            <div class="asset-card highlight-card"><span>Leapayai.com</span><span class="tag blue">Fintech</span></div>
+            <div class="asset-card highlight-card"><span>Leapxpay.com</span><span class="tag blue">Fintech</span></div>
+            <div class="asset-card"><span>Brainpromote.com</span><span class="tag gold">Growth</span></div>
         </div>
     </section>
 
-    <div class="container">
-        <h2 id="grid-title" style="text-align: center; margin-top: 50px;">Available Inventory</h2>
-        <div class="domains-grid" id="domainList"></div>
-    </div>
-
-    <section class="contact-section">
-        <div class="container">
-            <h2 id="contact-title">Direct Acquisition</h2>
-            <div class="contact-grid">
-                <a href="https://wa.me/17312734860" class="contact-card whatsapp" target="_blank">
+    <section id="contact-info">
+        <div class="contact-container">
+            <h2 class="section-title">Connect with Us</h2>
+            <div class="contact-cards">
+                <a href="tel:+17312734860" class="c-box">
+                    <i class="fas fa-phone"></i>
+                    <span>Call Us</span>
+                    <p>+1 (731) 273-4860</p>
+                </a>
+                <a href="https://wa.me/17312734860" class="c-box">
                     <i class="fab fa-whatsapp"></i>
-                    <strong>WhatsApp Business</strong>
-                    <span>+1 (731) 273-4860
+                    <span>WhatsApp</span>
+                    <p>Business Chat</p>
+                </a>
+                <a href="mailto:contact@shinwariecommerce.com" class="c-box">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email</span>
+                    <p>contact@shinwariecommerce.com</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 SHINWARI GLOBAL. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
