@@ -45,10 +45,26 @@ header { height: 100vh; display: flex; align-items: center; justify-content: cen
 h1 { font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 900; line-height: 1.1; }
 .highlight { color: var(--primary); }
 
-.portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; padding: 0 8% 100px; }
-.asset-card { background: var(--light-dark); padding: 25px; border-radius: 12px; border: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; }
-.asset-card:hover { border-color: var(--primary); transform: scale(1.02); }
-.asset-card span { font-weight: 600; font-size: 1rem; }
+.domains-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 40px 0;
+}
+
+.domain-card {
+    background: var(--light-dark);
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.domain-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+}
 
 .tag { font-size: 0.6rem; padding: 4px 10px; border-radius: 20px; background: #1e293b; border: 1px solid #334155; text-transform: uppercase; }
 .tag.blue { border-color: var(--primary); color: var(--primary); }
