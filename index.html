@@ -172,6 +172,37 @@
         </div>
     </div>
 </footer>
+    <div id="inquiryModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeForm()">&times;</span>
+        <h2 id="domainNameDisplay">Make an Offer</h2>
+        
+        <form action="https://formspree.io/f/mykbagyq" method="POST">
+            <input type="hidden" name="domain" id="domainHiddenInput">
+            <input type="text" name="name" placeholder="Full Name" required style="width: 100%; margin-bottom: 10px; padding: 10px; background: #1e293b; border: 1px solid #334155; color: white; border-radius: 5px;">
+            <input type="email" name="email" placeholder="Email Address" required style="width: 100%; margin-bottom: 10px; padding: 10px; background: #1e293b; border: 1px solid #334155; color: white; border-radius: 5px;">
+            <input type="number" name="offer" placeholder="Your Offer ($)" required style="width: 100%; margin-bottom: 10px; padding: 10px; background: #1e293b; border: 1px solid #334155; color: white; border-radius: 5px;">
+            <textarea name="message" placeholder="Optional Message" style="width: 100%; margin-bottom: 10px; padding: 10px; background: #1e293b; border: 1px solid #334155; color: white; border-radius: 5px; height: 100px;"></textarea>
+            <button type="submit" class="submit-btn" style="width: 100%; background: #38bdf8; color: #020617; padding: 12px; border: none; font-weight: bold; border-radius: 5px; cursor: pointer;">Send My Offer</button>
+        </form>
+    </div>
+</div>
+
+<script>
+function openForm(domain) {
+    document.getElementById('inquiryModal').style.display = "flex";
+    document.getElementById('domainNameDisplay').innerText = "Offer for: " + domain;
+    document.getElementById('domainHiddenInput').value = domain;
+}
+function closeForm() {
+    document.getElementById('inquiryModal').style.display = "none";
+}
+// Close if clicked outside
+window.onclick = function(event) {
+    let modal = document.getElementById('inquiryModal');
+    if (event.target == modal) { modal.style.display = "none"; }
+}
+</script>
     <script src="script.js"></script>
 </body>
 </html>
