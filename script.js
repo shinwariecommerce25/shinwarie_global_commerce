@@ -1,122 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    
-    <!-- مهم للـ SEO -->
-    <meta name="description" content="Premium AI Domains Marketplace - Buy high-value digital real estate domains.">
-    <meta name="keywords" content="AI domains, premium domains, buy domains, digital real estate">
-    
-    <!-- Responsive -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+const domainsData = {
+    "AI Tech Infrastructure": ["Logicvaultai.com", "Resetllm.com", "Cyberpathai.com", "Opticesai.com"],
+    "AI Agents & Automation": ["Logicvaultagent.com", "Agentswiftai.com", "Brainpathagent.com", "Thepathagent.com", "Openpayagent.com"],
+    "Digital Growth & Fintech": ["Brainpromote.com", "Leapayai.com", "Leapxpay.com"]
+};
 
-    <title>AssetFlow Premium | Digital Real Estate</title>
+const langConfig = {
+    en: { 
+        h: "Specializing in AI-Driven Domains and Global Tech Infrastructure.", 
+        b: "Buy Now", o: "Make Offer", c: "Direct Acquisition", 
+        v: "View Portfolio", call: "Call Us", email: "Email Sales", wa: "WhatsApp Business",
+        navP: "Portfolio", navC: "Contact"
+    },
+    ar: { 
+        h: "متخصصون في نطاقات الذكاء الاصطناعي والتكنولوجيا.", 
+        b: "شراء الآن", o: "تقديم عرض", c: "استحواذ مباشر", 
+        v: "عرض المحفظة", call: "اتصل بنا", email: "البريد الإلكتروني", wa: "واتساب بيزنس",
+        navP: "المحفظة", navC: "تواصل معنا"
+    }
+};
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+function renderDomains(d) {
+    const list = document.getElementById('portfolio-list');
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    if (!list) {
+        console.error("portfolio-list مش موجود");
+        return;
+    }
 
-    <!-- Google Font (احترافي) -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
+    list.innerHTML = '';
 
-<body id="main-body">
+    Object.keys(domainsData).forEach(group => {
+        const section = document.createElement('div');
+        section.className = 'category-block';
 
-    <!-- HEADER -->
-    <header>
-        <div class="container nav-content">
-            <a href="index.html" class="logo">Asset<span>Flow</span> Premium</a>
+        section.innerHTML = `
+            <h3 class="category-name">${group}</h3>
+            <div class="grid">
+                ${domainsData[group].map(name => `
+                    <div class="card">
+                        <h3>${name}</h3>
 
-            <nav class="main-nav">
-                <a href="#portfolio-list" id="nav-portfolio">Portfolio</a>
-                <a href="#contact-section" id="nav-contact">Contact</a>
+                        <div style="margin-bottom:10px; color:#38bdf8; font-weight:bold;">
+                            $2,499
+                        </div>
 
-                <!-- Language -->
-                <div class="lang-switcher">
-                    <button onclick="changeLanguage('en')" class="btn-lang active" id="btn-en">EN</button>
-                    <button onclick="changeLanguage('ar')" class="btn-lang" id="btn-ar">AR</button>
-                    <button onclick="changeLanguage('fr')" class="btn-lang" id="btn-fr">FR</button>
-                    <button onclick="changeLanguage('es')" class="btn-lang" id="btn-es">ES</button>
-                </div>
-            </nav>
-        </div>
-    </header>
+                        <a href="https://sedo.com/search/details/?domain=${name}" target="_blank" class="btn-buy">
+                            ${d.b}
+                        </a>
 
-    <!-- MAIN -->
-    <main class="container">
-
-        <!-- HERO -->
-        <section class="hero">
-            <h1 id="txt-hero-title">
-                Specializing in AI-Driven Domains and Global Tech Infrastructure.
-            </h1>
-
-            <div class="hero-btns">
-                <a href="#portfolio-list" id="txt-view-btn" class="btn-primary">
-                    View Portfolio
-                </a>
-
-                <a href="https://wa.me/17312734860" target="_blank" class="btn-whatsapp">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
+                        <button class="btn-offer" data-domain="${name}">
+                            ${d.o}
+                        </button>
+                    </div>
+                `).join('')}
             </div>
-        </section>
+        `;
 
-        <!-- Portfolio -->
-        <div id="portfolio-list"></div>
+        list.appendChild(section);
+    });
 
-    </main>
+    // زرار العرض (Event Delegation)
+    document.querySelectorAll('.btn-offer').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const domain = this.getAttribute('data-domain');
+            window.location.href = `mailto:contact@shinwariecommerce.com?subject=Offer for ${domain}`;
+        });
+    });
+}
 
-    <!-- CONTACT -->
-    <section id="contact-section" class="contact-area">
-        <div class="container">
+function changeLanguage(lang) {
+    const d = langConfig[lang] || langConfig['en'];
 
-            <h2 id="txt-contact-title">Direct Acquisition</h2>
+    // نصوص
+    document.getElementById('txt-hero-title').innerText = d.h;
+    document.getElementById('txt-contact-title').innerText = d.c;
+    document.getElementById('txt-view-btn').innerText = d.v;
+    document.getElementById('nav-portfolio').innerText = d.navP;
+    document.getElementById('nav-contact').innerText = d.navC;
+    document.getElementById('txt-wa-label').innerText = d.wa;
+    document.getElementById('txt-call').innerText = d.call;
+    document.getElementById('txt-email').innerText = d.email;
 
-            <div class="contact-grid">
+    renderDomains(d);
 
-                <a href="https://wa.me/17312734860" target="_blank" class="contact-card wa-link">
-                    <i class="fab fa-whatsapp"></i>
-                    <strong id="txt-wa-label">WhatsApp Business</strong>
-                    <span>+1 (731) 273-4860</span>
-                </a>
+    // RTL
+    document.getElementById('main-body').className = (lang === 'ar' ? 'rtl-mode' : '');
 
-                <a href="tel:+17312734860" class="contact-card">
-                    <i class="fas fa-phone-alt"></i>
-                    <strong id="txt-call">Call Us</strong>
-                    <span>+1 (731) 273-4860</span>
-                </a>
+    // Active button
+    document.querySelectorAll('.btn-lang').forEach(btn => btn.classList.remove('active'));
+    const activeBtn = document.getElementById('btn-' + lang);
+    if (activeBtn) activeBtn.classList.add('active');
+}
 
-                <a href="mailto:contact@shinwariecommerce.com" class="contact-card">
-                    <i class="fas fa-envelope"></i>
-                    <strong id="txt-email">Email Sales</strong>
-                    <span>contact@shinwariecommerce.com</span>
-                </a>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-
-            <div class="legal-links">
-                <a href="privacy.html" id="txt-privacy">Privacy Policy</a>
-                <a href="terms.html" id="txt-terms">Terms of Service</a>
-            </div>
-
-            <p id="txt-copy">
-                &copy; 2026 ASSETFLOW PREMIUM. All Rights Reserved.
-            </p>
-
-        </div>
-    </footer>
-
-    <!-- JS -->
-    <script src="script.js"></script>
-
-</body>
-</html>
+// تشغيل
+document.addEventListener('DOMContentLoaded', () => {
+    changeLanguage('en');
+});
