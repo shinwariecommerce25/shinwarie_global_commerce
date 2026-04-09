@@ -12,13 +12,16 @@
     <header>
         <div class="container nav-content">
             <a href="index.html" class="logo">Asset<span>Flow</span> Premium</a>
-            <div class="lang-switcher">
-                <button onclick="changeLanguage('en')" class="btn-lang active" id="btn-en">EN</button>
-                <button onclick="changeLanguage('ar')" class="btn-lang" id="btn-ar">AR</button>
-                <button onclick="changeLanguage('fr')" class="btn-lang" id="btn-fr">FR</button>
-                <button onclick="changeLanguage('es')" class="btn-lang" id="btn-es">ES</button>
-                <button onclick="changeLanguage('it')" class="btn-lang" id="btn-it">IT</button>
-            </div>
+            <nav class="main-nav">
+                <a href="#portfolio-list" id="nav-portfolio">Portfolio</a>
+                <a href="#contact-section" id="nav-contact">Contact</a>
+                <div class="lang-switcher">
+                    <button onclick="changeLanguage('en')" class="btn-lang active" id="btn-en">EN</button>
+                    <button onclick="changeLanguage('ar')" class="btn-lang" id="btn-ar">AR</button>
+                    <button onclick="changeLanguage('fr')" class="btn-lang" id="btn-fr">FR</button>
+                    <button onclick="changeLanguage('es')" class="btn-lang" id="btn-es">ES</button>
+                </div>
+            </nav>
         </div>
     </header>
 
@@ -34,22 +37,7 @@
         <div id="portfolio-list"></div>
     </main>
 
-    <div id="offerModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2 id="txt-modal-title">Make an Offer</h2>
-            <form id="offerForm">
-                <input type="hidden" id="selectedDomain">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Email Address" required>
-                <input type="number" placeholder="Offer Amount ($)" required>
-                <textarea placeholder="Message (Optional)" rows="3"></textarea>
-                <button type="submit" class="btn-buy" id="txt-submit">Send Offer</button>
-            </form>
-        </div>
-    </div>
-
-    <section class="contact-area">
+    <section id="contact-section" class="contact-area">
         <div class="container">
             <h2 id="txt-contact-title">Direct Acquisition</h2>
             <div class="contact-grid">
@@ -66,7 +54,7 @@
                 <div class="contact-card">
                     <i class="fas fa-envelope"></i>
                     <strong id="txt-email">Email Sales</strong>
-                    <span>sales@shinwariecommerce.com</span>
+                    <span>contact@shinwariecommerce.com</span>
                 </div>
             </div>
         </div>
@@ -76,10 +64,9 @@
         <div class="container">
             <div class="legal-links">
                 <a href="privacy.html" id="txt-privacy">Privacy Policy</a>
-                <a href="refund.html" id="txt-refund">Refund Policy</a>
                 <a href="terms.html" id="txt-terms">Terms of Service</a>
             </div>
-            <p id="txt-copy">&copy; 2026 AssetFlow Premium Domains.</p>
+            <p id="txt-copy">&copy; 2026 ASSETFLOW PREMIUM. All Rights Reserved.</p>
         </div>
     </footer>
 
