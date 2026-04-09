@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AssetFlow Premium | Specialized Domains</title>
+    <title>AssetFlow Premium | Digital Real Estate</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -11,7 +11,7 @@
 
     <header>
         <div class="container nav-content">
-            <a href="#" class="logo">Asset<span>Flow</span> Premium</a>
+            <a href="index.html" class="logo">Asset<span>Flow</span> Premium</a>
             <div class="lang-switcher">
                 <button onclick="changeLanguage('en')" class="btn-lang active" id="btn-en">EN</button>
                 <button onclick="changeLanguage('ar')" class="btn-lang" id="btn-ar">AR</button>
@@ -26,7 +26,7 @@
         <section class="hero">
             <h1 id="txt-hero-title">Specializing in AI-Driven Domains and Global Tech Infrastructure.</h1>
             <div class="hero-btns">
-                <a href="#portfolio" id="txt-view-btn">View Portfolio</a>
+                <a href="#portfolio-list" id="txt-view-btn">View Portfolio</a>
                 <a href="https://wa.me/17312734860" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
             </div>
         </section>
@@ -34,23 +34,38 @@
         <div id="portfolio-list"></div>
     </main>
 
+    <div id="offerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="txt-modal-title">Make an Offer</h2>
+            <form id="offerForm">
+                <input type="hidden" id="selectedDomain">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="number" placeholder="Offer Amount ($)" required>
+                <textarea placeholder="Message (Optional)" rows="3"></textarea>
+                <button type="submit" class="btn-buy" id="txt-submit">Send Offer</button>
+            </form>
+        </div>
+    </div>
+
     <section class="contact-area">
         <div class="container">
             <h2 id="txt-contact-title">Direct Acquisition</h2>
             <div class="contact-grid">
+                <a href="https://wa.me/17312734860" target="_blank" class="contact-card wa-link">
+                    <i class="fab fa-whatsapp"></i>
+                    <strong id="txt-wa-label">WhatsApp Business</strong>
+                    <span>+1 (731) 273-4860</span>
+                </a>
                 <div class="contact-card">
                     <i class="fas fa-phone-alt"></i>
-                    <strong>Call Us</strong>
+                    <strong id="txt-call">Call Us</strong>
                     <span>+1 (731) 273-4860</span>
                 </div>
                 <div class="contact-card">
-                    <i class="fab fa-whatsapp"></i>
-                    <strong>WhatsApp</strong>
-                    <span>Business Chat</span>
-                </div>
-                <div class="contact-card">
                     <i class="fas fa-envelope"></i>
-                    <strong>Email</strong>
+                    <strong id="txt-email">Email Sales</strong>
                     <span>sales@shinwariecommerce.com</span>
                 </div>
             </div>
@@ -60,11 +75,11 @@
     <footer>
         <div class="container">
             <div class="legal-links">
-                <a href="#" id="txt-privacy">Privacy</a>
-                <a href="#" id="txt-refund">Refund</a>
-                <a href="#" id="txt-terms">Terms</a>
+                <a href="privacy.html" id="txt-privacy">Privacy Policy</a>
+                <a href="refund.html" id="txt-refund">Refund Policy</a>
+                <a href="terms.html" id="txt-terms">Terms of Service</a>
             </div>
-            <p id="txt-copy">&copy; 2026 AssetFlow Premium. All Rights Reserved.</p>
+            <p id="txt-copy">&copy; 2026 AssetFlow Premium Domains.</p>
         </div>
     </footer>
 
