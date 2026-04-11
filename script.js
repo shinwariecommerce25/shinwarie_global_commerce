@@ -1,68 +1,53 @@
 const FORM_LINK = "https://formspree.io/f/mykbagyq"; 
 
 const data = {
-  featured: [
-    "logicvaultai.com",
-    "resetllm.com",
-    "leapxpay.com"
-  ],
-  ai: [
-    "logicvaultai.com",
-    "resetllm.com",
-    "cyberpathai.com",
-    "opticesai.com"
-  ],
-  agents: [
-    "logicvaultagent.com",
-    "agentswiftai.com",
-    "brainpathagent.com",
-    "thepathagent.com",
-    "openpayagent.com"
-  ],
-  fintech: [
-    "leappayai.com",
-    "leapxpay.com",
-    "brainpromote.com"
-  ]
+  featured: ["logicvaultai.com", "leapxpay.com", "resetllm.com"],
+  ai: ["logicvaultai.com", "resetllm.com", "cyberpathai.com", "opticesai.com"],
+  agents: ["logicvaultagent.com", "agentswiftai.com", "brainpathagent.com", "thepathagent.com", "openpayagent.com"],
+  fintech: ["leappayai.com", "leapxpay.com", "brainpromote.com"]
 };
 
-// وظيفة إنشاء لينك Sedo بشكل سليم
 function sedoLink(domain) {
   return https://sedo.com/search/details/?domain=${domain};
 }
 
-// إنشاء كارت الدومين (تعديل الـ Template Literals)
+// وظيفة البحث
+function searchDomains() {
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    let cards = document.getElementsByClassName('card');
+    
+    for (let i = 0; i < cards.length; i++) {
+        let domainName = cards[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+        if (domainName.includes(input)) {
+            cards[i].style.display = "";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+
 function card(domain) {
   return 
     <div class="card">
-      <div style="font-size: 0.7rem; color: var(--primary); margin-bottom: 10px;">PREMIUM ASSET</div>
-      <h3>${domain.toUpperCase()}</h3>
-      
-      <a href="${sedoLink(domain)}" target="_blank" class="btn-buy">
-        Buy Now
-      </a>
-
-      <a href="${FORM_LINK}" target="_blank" class="btn-offer">
-        Make Offer
-      </a>
+      <small style="color: var(--primary); letter-spacing: 1px;">PREMIUM ASSET</small>
+      <h3>${domain.toLowerCase()}</h3>
+      <a href="${sedoLink(domain)}" target="_blank" class="btn-buy">Buy Now (Sedo)</a>
+      <a href="${FORM_LINK}?subject=Offer_for_${domain}" target="_blank" class="btn-offer">Make Offer</a>
     </div>
   ;
 }
 
-// إنشاء قسم (Section)
 function section(title, list) {
   return 
-    <h2 class="section-title">${title}</h2>
-    <div class="grid">
-      ${list.map(domain => card(domain)).join("")}
+    <div class="section-group">
+        <h2 class="section-title">${title}</h2>
+        <div class="grid">${list.map(domain => card(domain)).join("")}</div>
     </div>
   ;
 }
 
-// التشغيل النهائي
 document.addEventListener("DOMContentLoaded", function () {
   const box = document.getElementById("domains");
-
   if (box) {
     box.innerHTML = 
       ${section("🔥 Featured Domains", data.featured)}
