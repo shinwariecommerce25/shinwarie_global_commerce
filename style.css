@@ -1,169 +1,159 @@
 :root {
+    --bg: #020617;
+    --text: #e2e8f0;
     --primary: #38bdf8;
-    --border: #334155;
-    --text-main: #f8fafc;
-    --royal-bg: #020617;
-}
-
-* {
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    transition: all 0.25s ease;
+    --border: #1e293b;
 }
 
 body {
-    background-color: var(--royal-bg);
-    color: var(--text-main);
-    font-family: 'Poppins', 'Inter', sans-serif;
     margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    color: var(--text);
 }
 
-/* HEADER */
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Header */
 header {
     border-bottom: 1px solid var(--border);
     padding: 15px 0;
-    background: rgba(2,6,23,0.7);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    backdrop-filter: blur(12px);
 }
 
-.btn-lang:hover {
-    border-color: var(--primary);
-    transform: scale(1.05);
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* HERO */
+nav {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Lang */
+.lang-switcher {
+    display: flex;
+    gap: 5px;
+}
+
+.btn-lang {
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    padding: 5px 8px;
+    cursor: pointer;
+}
+
+.btn-lang.active {
+    background: var(--primary);
+    color: #000;
+}
+
+/* Hero */
 .hero {
     text-align: center;
-    padding: 100px 10px 50px;
+    padding: 100px 20px;
 }
 
 .hero h1 {
-    font-size: 3rem;
-    background: linear-gradient(90deg,#fff,#38bdf8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 30px;
+    font-size: 2.8rem;
 }
 
-.btn-primary, .btn-whatsapp {
-    padding: 12px 25px;
-    border-radius: 8px;
-    font-weight: 800;
-    margin: 5px;
-    display: inline-block;
-    text-decoration: none;
-    cursor: pointer;
+.hero-btns {
+    margin-top: 20px;
 }
 
-.btn-primary {
+.btn-main {
     background: var(--primary);
-    color: #000 !important;
-    border: none !important;
+    color: #000;
+    padding: 10px 20px;
+    margin-right: 10px;
+    text-decoration: none;
 }
 
-.btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(56,189,248,0.3);
-}
-
-.btn-whatsapp {
+.btn-alt {
     border: 2px solid #25D366;
     color: #25D366;
+    padding: 10px 20px;
 }
 
-.btn-whatsapp:hover {
-    background: #25D366;
-    color: #000 !important;
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
 }
 
-/* MID SEARCH */
-.mid-search {
-    text-align: center;
-    margin: 40px 0;
-}
-
-#search-input {
-    width: 60%;
-    max-width: 500px;
-    padding: 12px 15px;
-    border-radius: 10px;
-    border: 1px solid var(--border);
-    background: rgba(15,23,42,0.7);
-    color: var(--text-main);
-    font-size: 1rem;
-    outline: none;
-}
-
-#search-input:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 10px var(--primary);
-}
-
-/* PORTFOLIO CARDS */
-.portfolio-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; padding: 0 10px; }
-
+/* Card */
 .card {
-    background: rgba(15,23,42,0.7);
-    border: 1px solid var(--border);
+    background: #0f172a;
     padding: 25px;
-    border-radius: 15px;
+    border-radius: 10px;
     text-align: center;
-    backdrop-filter: blur(10px);
-    position: relative;
-    width: 240px;
-    transition: transform 0.3s, border-color 0.3s;
 }
 
 .card:hover {
-    border-color: var(--primary);
-    transform: translateY(-10px) scale(1.02);
-}
-
-.card h3 { margin-bottom: 15px; }
-
-.btn-buy, .btn-offer {
-    display: block;
-    margin: 8px 0;
-    padding: 10px;
-    border-radius: 8px;
-    font-weight: 700;
-    text-decoration: none;
-    color: #000;
-    background: linear-gradient(90deg,#38bdf8,#0ea5e9);
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.btn-buy:hover, .btn-offer:hover { transform: scale(1.05); }
-
-/* CONTACT CARDS */
-.contact-card {
-    background: rgba(15,23,42,0.8);
-    border: 1px solid var(--border);
-    padding: 25px;
-    border-radius: 12px;
-    min-width: 260px;
-    backdrop-filter: blur(10px);
-    transition: transform 0.3s, border-color 0.3s;
-    text-align: center;
-    margin: 10px;
-}
-
-.contact-card:hover {
-    border-color: var(--primary);
     transform: translateY(-5px);
+}
+
+/* Buttons */
+.btn-buy {
+    display: block;
+    background: var(--primary);
+    padding: 10px;
+    margin-top: 10px;
+    color: #000;
+    text-decoration: none;
+}
+
+.btn-offer {
+    display: block;
+    border: 1px solid var(--primary);
+    padding: 10px;
+    margin-top: 10px;
+    background: none;
+    color: var(--primary);
+}
+
+/* Contact */
+#contact {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.contact-box {
+    background: #0f172a;
+    padding: 40px;
+    border-radius: 12px;
+}
+
+.contact-buttons a {
+    margin: 10px;
+    display: inline-block;
 }
 
 /* Footer */
 footer {
-    padding: 40px 0;
+    margin-top: 50px;
     text-align: center;
+    padding: 30px;
     border-top: 1px solid var(--border);
-    color: #64748b;
 }
 
-/* RTL */
-body.rtl-mode { direction: rtl; text-align: right; }
+.footer-links a {
+    margin: 0 10px;
+}
+
+/* Mobile */
+@media(max-width:768px){
+    .nav {
+        flex-direction: column;
+    }
+}
