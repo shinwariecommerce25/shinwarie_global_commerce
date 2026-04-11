@@ -8,7 +8,7 @@ const data = {
 };
 
 function sedoLink(domain) {
-  return https://sedo.com/search/details/?domain=${domain};
+  return https://sedo.com/search/details/?domain=${domain}
 }
 
 // وظيفة البحث
