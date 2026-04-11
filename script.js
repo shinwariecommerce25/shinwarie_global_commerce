@@ -1,20 +1,17 @@
-const FORM_LINK = "https://formspree.io/f/mykbagyq"; // حط لينك الفورم هنا
+const FORM_LINK = "https://formspree.io/f/mykbagyq"; 
 
-// الدومينات متقسمة
 const data = {
   featured: [
     "logicvaultai.com",
     "resetllm.com",
     "leapxpay.com"
   ],
-
   ai: [
     "logicvaultai.com",
     "resetllm.com",
     "cyberpathai.com",
     "opticesai.com"
   ],
-
   agents: [
     "logicvaultagent.com",
     "agentswiftai.com",
@@ -22,7 +19,6 @@ const data = {
     "thepathagent.com",
     "openpayagent.com"
   ],
-
   fintech: [
     "leappayai.com",
     "leapxpay.com",
@@ -30,46 +26,49 @@ const data = {
   ]
 };
 
-// لينك Sedo
+// وظيفة إنشاء لينك Sedo بشكل سليم
 function sedoLink(domain) {
   return https://sedo.com/search/details/?domain=${domain};
 }
 
-// كارت دومين
+// إنشاء كارت الدومين (تعديل الـ Template Literals)
 function card(domain) {
   return 
     <div class="card">
-      <h3>${domain}</h3>
-
+      <div style="font-size: 0.7rem; color: var(--primary); margin-bottom: 10px;">PREMIUM ASSET</div>
+      <h3>${domain.toUpperCase()}</h3>
+      
       <a href="${sedoLink(domain)}" target="_blank" class="btn-buy">
         Buy Now
       </a>
 
-      <a href="${FORM_LINK}?domain=${domain}" class="btn-offer">
+      <a href="${FORM_LINK}" target="_blank" class="btn-offer">
         Make Offer
       </a>
     </div>
   ;
 }
 
-// render section
+// إنشاء قسم (Section)
 function section(title, list) {
   return 
     <h2 class="section-title">${title}</h2>
     <div class="grid">
-      ${list.map(card).join("")}
+      ${list.map(domain => card(domain)).join("")}
     </div>
   ;
 }
 
-// تشغيل
+// التشغيل النهائي
 document.addEventListener("DOMContentLoaded", function () {
   const box = document.getElementById("domains");
 
-  box.innerHTML = 
-    ${section("🔥 Featured Domains", data.featured)}
-    ${section("🤖 AI Infrastructure", data.ai)}
-    ${section("⚙️ AI Agents", data.agents)}
-    ${section("💰 Fintech & Growth", data.fintech)}
-  ;
+  if (box) {
+    box.innerHTML = 
+      ${section("🔥 Featured Domains", data.featured)}
+      ${section("🤖 AI Infrastructure", data.ai)}
+      ${section("⚙️ AI Agents", data.agents)}
+      ${section("💰 Fintech & Growth", data.fintech)}
+    ;
+  }
 });
