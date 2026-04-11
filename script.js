@@ -1,18 +1,44 @@
 const FORM_LINK = "https://formspree.io/f/mykbagyq";
-const data = {featured: ["logicvaultai.com", "leapxpay.com", "resetllm.com"],
-ai: ["cyberpathai.com", "opticesai.com", "leappayai.com"],
-agents: ["logicvaultagent.com", "agentswiftai.com", "brainpathagent.com", "thepathagent.com", "openpayagent.com"],
-fintech: ["leappayai.com", "leapxpay.com", "brainpromote.com"]
+
+const data = {
+    featured: ["logicvaultai.com", "leapxpay.com", "resetllm.com"],
+    ai: ["cyberpathai.com", "opticesai.com", "leappayai.com"],
+    agents: ["logicvaultagent.com", "agentswiftai.com", "brainpathagent.com", "thepathagent.com", "openpayagent.com"],
+    fintech: ["leappayai.com", "leapxpay.com", "brainpromote.com"]
 };
-const sedoLink = (d) => `https://sedo.com/search/details/?domain${d}`;
-const card = (d) => `<div class="card"><small style="color:#38bdf8">PREMIUM ASSET</small><h3>${d}</h3><a href="${sedoLink(d)}" target="_blank" class="btn-buy">Buy Now (Sedo)</a><a href="${FORM_LINK}?subject=Offer_for_${d}" target="_blank" class="btn-offer">Make Offer</a></div>`;
-const section = (t, l) => `<div class="section-group"><h2 class="section-title">${t}</h2><div class="grid">${l.map(d => card(d)).join("")}</div></div>`;
+
 function renderAll() {
-const box = document.getElementById("domains");if (box){
-box.innerHTML = section("🔥 Featured Domains", data.featured) + section("🤖 AI Infrastructure", data.ai) + section("⚙️ AI Agents", data.agents) + section("💰 Fintech & Growth", data.fintech);}}
+    var box = document.getElementById("domains");
+    if (!box) return;
+
+    var html = "";
+
+    // Featured Section
+    html += '<h2 class="section-title">🔥 Featured</h2><div class="grid">';
+    for (var i = 0; i < data.featured.length; i++) {
+        var d = data.featured[i];
+        html += '<div class="card"><h3>' + d + '</h3><a href="https://sedo.com/search/details/?domain=' + d + '" target="_blank" class="btn-buy">Buy Now</a><a href="' + FORM_LINK + '?subject=Offer_' + d + '" target="_blank" class="btn-offer">Make Offer</a></div>';
+    }
+    html += '</div>';
+
+    // AI Section
+    html += '<h2 class="section-title">🤖 AI Infrastructure</h2><div class="grid">';
+    for (var j = 0; j < data.ai.length; j++) {
+        var d2 = data.ai[j];
+        html += '<div class="card"><h3>' + d2 + '</h3><a href="https://sedo.com/search/details/?domain=' + d2 + '" target="_blank" class="btn-buy">Buy Now</a></div>';
+    }
+    html += '</div>';
+
+    box.innerHTML = html;
+}
+
 window.onload = renderAll;
+
 function searchDomains() {
-let input = document.getElementById('searchInput').value.toLowerCase();
-let cards = document.getElementsByClassName('card');
-for (let i = 0; i < cards.length; i{letname = cards[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
-cards[i].style.display = name.includes(input) ? "" : "none";}
+    var input = document.getElementById('searchInput').value.toLowerCase();
+    var cards = document.getElementsByClassName('card');
+    for (var k = 0; k < cards.length; k++) {
+        var name = cards[k].getElementsByTagName('h3')[0].innerText.toLowerCase();
+        cards[k].style.display = name.indexOf(input) > -1 ? "" : "none";
+    }
+}
