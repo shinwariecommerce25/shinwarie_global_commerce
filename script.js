@@ -1,57 +1,75 @@
-const FORM_LINK = "https://formspree.io/f/mykbagyq"; // 
+const FORM_LINK = "https://your-form-link.com"; // حط لينك الفورم هنا
 
-const domains = [
-"Logicvaultai.com",
-"Resetllm.com",
-"Cyberpathai.com",
-"Opticesai.com",
-"Agentswiftai.com"
-];
+// الدومينات متقسمة
+const data = {
+  featured: [
+    "logicvaultai.com",
+    "resetllm.com",
+    "leapxpay.com"
+  ],
 
-function renderDomains(){
-    const box = document.getElementById("domains");
+  ai: [
+    "logicvaultai.com",
+    "resetllm.com",
+    "cyberpathai.com",
+    "opticesai.com"
+  ],
 
-    box.innerHTML = 
-        <div class="grid">
-            ${domains.map(d => 
-                <div class="card">
-                    <h3>${d}</h3>
+  agents: [
+    "logicvaultagent.com",
+    "agentswiftai.com",
+    "brainpathagent.com",
+    "thepathagent.com",
+    "openpayagent.com"
+  ],
 
-                    <a href="https://wa.me/17312734860?text=I'm interested in ${d}" class="btn-buy">
-                        Buy Now
-                    </a>
-
-                    <a href="${FORM_LINK}?domain=${d}" class="btn-offer">
-                        Make Offer
-                    </a>
-                </div>
-            ).join("")}
-        </div>
-    ;
-}
-
-/* Languages */
-const lang = {
-en:{h:"Premium AI Domains Ready for Acquisition",v:"View Portfolio",c:"Direct Contact",p:"Portfolio",co:"Contact"},
-ar:{h:"نطاقات AI مميزة للبيع",v:"عرض الدومينات",c:"تواصل مباشر",p:"الدومينات",co:"تواصل"},
-fr:{h:"Domaines IA premium",v:"Voir",c:"Contact",p:"Portfolio",co:"Contact"},
-es:{h:"Dominios IA premium",v:"Ver",c:"Contacto",p:"Portafolio",co:"Contacto"},
-it:{h:"Domini AI premium",v:"Visualizza",c:"Contatto",p:"Portfolio",co:"Contatto"}
+  fintech: [
+    "leappayai.com",
+    "leapxpay.com",
+    "brainpromote.com"
+  ]
 };
 
-function changeLanguage(l){
-    const d = lang[l];
-
-    document.getElementById("hero-title").innerText = d.h;
-    document.getElementById("viewBtn").innerText = d.v;
-    document.getElementById("contact-title").innerText = d.c;
-    document.getElementById("navP").innerText = d.p;
-    document.getElementById("navC").innerText = d.co;
-
-    document.body.style.direction = (l === "ar") ? "rtl" : "ltr";
-
-    document.querySelectorAll(".btn-lang").forEach(b=>b.classList.remove("active"));
-    document.getElementById("lang-"+l).classList.add("active");
+// لينك Sedo
+function sedoLink(domain) {
+  return https://sedo.com/search/details/?domain=${domain};
 }
 
-renderDomains();
+// كارت دومين
+function card(domain) {
+  return 
+    <div class="card">
+      <h3>${domain}</h3>
+
+      <a href="${sedoLink(domain)}" target="_blank" class="btn-buy">
+        Buy Now
+      </a>
+
+      <a href="${FORM_LINK}?domain=${domain}" class="btn-offer">
+        Make Offer
+      </a>
+    </div>
+  ;
+}
+
+// render section
+function section(title, list) {
+  return 
+    <h2 class="section-title">${title}</h2>
+    <div class="grid">
+      ${list.map(card).join("")}
+    </div>
+  ;
+}
+
+// تشغيل
+document.addEventListener("DOMContentLoaded", function () {
+  const box = document.getElementById("domains");
+
+  box.innerHTML = 
+    ${section("🔥 Featured Domains", data.featured)}
+    ${section("🤖 AI Infrastructure", data.ai)}
+    ${section("⚙️ AI Agents", data.agents)}
+    ${section("💰 Fintech & Growth", data.fintech)}
+  ;
+});
