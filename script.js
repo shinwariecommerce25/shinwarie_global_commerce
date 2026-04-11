@@ -1,4 +1,4 @@
-const FORM_LINK = "https://formspree.io/f/mykbagyq"; 
+const FORM_LINK = "https://formspree.io/f/mykbagyq"
 
 const data = {
   featured: ["logicvaultai.com", "leapxpay.com", "resetllm.com"],
@@ -56,4 +56,4 @@ document.addEventListener("DOMContentLoaded", function () {
       ${section("💰 Fintech & Growth", data.fintech)}
     ;
   }
-});
+})
