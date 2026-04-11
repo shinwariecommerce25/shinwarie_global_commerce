@@ -186,5 +186,41 @@ footer {
     color: var(--primary);
     text-decoration: none;
 }
+.search-section {
+    padding: 40px 0;
+    text-align: center;
+}
 
+.search-box {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 15px 25px;
+    padding-right: 50px;
+    border-radius: 50px;
+    border: 1px solid var(--border);
+    background: #0f172a;
+    color: white;
+    font-size: 1.1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.search-box input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+}
+
+.search-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    pointer-events: none;
+}
 
