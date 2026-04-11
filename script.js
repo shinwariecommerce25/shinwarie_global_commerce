@@ -1,4 +1,4 @@
-const FORM_LINK = "https://your-form-link.com"; // حط لينك الفورم هنا
+const FORM_LINK = "https://formspree.io/f/mykbagyq"; // حط لينك الفورم هنا
 
 // الدومينات متقسمة
 const data = {
