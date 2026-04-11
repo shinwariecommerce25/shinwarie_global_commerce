@@ -1,5 +1,4 @@
-+
-    const FORM_LINK = "https://formspree.io/f/mykbagyq";
+const FORM_LINK = "https://formspree.io/f/mykbagyq";
 const data = {
     featured: ["logicvaultai.com", "leapxpay.com", "resetllm.com"],
     ai: ["cyberpathai.com", "opticesai.com", "leappayai.com"],
