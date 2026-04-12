@@ -1,1 +1,61 @@
-const FORM_LINK="https://formspree.io/f/mykbagyq";const data={featured:["logicvaultai.com","leapxpay.com","resetllm.com"],ai:["cyberpathai.com","opticesai.com","leappayai.com"],agents:["logicvaultagent.com","agentswiftai.com","brainpathagent.com","thepathagent.com","openpayagent.com"],fintech:["leappayai.com","leapxpay.com","brainpromote.com"]};function sendOffer(d){var p=prompt("Enter your offer price for "+d+" ($):");if(p){var e=prompt("Enter your Email:");if(e){var f=document.createElement("form");f.method="POST";f.action=FORM_LINK;var i1=document.createElement("input");i1.name="Domain";i1.value=d;var i2=document.createElement("input");i2.name="Price";i2.value=p;var i3=document.createElement("input");i3.name="Email";i3.value=e;f.appendChild(i1);f.appendChild(i2);f.appendChild(i3);document.body.appendChild(f);f.submit();alert("Thank you!");}}}function renderAll(){var b=document.getElementById("domains");if(!b)return;var h="";function c(t,l){var s='<h2 class="section-title">'+t+'</h2><div class="grid">';for(var i=0;i<l.length;i++){var d=l[i];s+='<div class="card"><small style="color:#38bdf8">PREMIUM ASSET</small><h3>'+d+'</h3><a href="https://sedo.com/search/details/?domain='+d+'" target="_blank" class="btn-buy">Buy Now</a><button onclick="sendOffer(\''+d+'\')" class="btn-offer">Make Offer</button></div>';}return s+'</div>';}h+=c("🔥 Featured Domains",data.featured);h+=c("🤖 AI Infrastructure",data.ai);h+=c("⚙️ AI Agents",data.agents);h+=c("💰 Fintech & Growth",data.fintech);b.innerHTML=h;}function changeLanguage(lang){const trans={en:{title:"Premium AI Domains Ready for Acquisition",sub:"Own digital assets that define the future.",search:"Search..."},ar:{title:"دومينات ذكاء اصطناعي مميزة للاستحواذ",sub:"امتلك أصولاً رقمية ترسم ملامح المستقبل.",search:"ابحث عن دومين..."}};document.getElementById('hero-title').innerText=trans[lang].title;document.getElementById('hero-sub').innerText=trans[lang].sub;document.getElementById('searchInput').placeholder=trans[lang].search;document.documentElement.dir=lang==='ar'?'rtl':'ltr';document.querySelectorAll('.btn-lang').forEach(b=>b.classList.remove('active'));document.getElementById('lang-'+lang).classList.add('active');}window.onload=renderAll;
+const FORM_LINK = "https://formspree.io/f/mykbagyq";
+const data = {
+    featured: ["logicvaultai.com", "leapxpay.com", "resetllm.com"],
+    ai: ["cyberpathai.com", "opticesai.com", "leappayai.com"],
+    agents: ["logicvaultagent.com", "agentswiftai.com", "brainpathagent.com", "thepathagent.com", "openpayagent.com"],
+    fintech: ["leappayai.com", "leapxpay.com", "brainpromote.com"]
+};
+// وظيفة لفتح النموذج
+function openOfferModal(domain) { document.getElementById('targetDomain').value = domain; document.getElementById('modalTitle').innerText = "Offer for " + domain; document.getElementById('offerModal').style.display = "block";
+}
+function closeModal() { document.getElementById('offerModal').style.display = "none";
+}
+// معالجة البحث (Search) - شغال بمجرد الكتابة
+function searchDomains() {
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    let cards = document.getElementsByClassName('card');
+    for (let i = 0; i < cards.length; i++) {
+        let name = cards[i].querySelector('h3').innerText.toLowerCase();
+        cards[i].style.display = name.includes(input) ? "block" : "none";
+    }
+}
+function renderAll() {
+    const box = document.getElementById("domains");
+    if (!box) return;
+    let h = "";
+    function c(t, l) {
+        let s = '<h2 class="section-title">' + t + '</h2><div class="grid">';
+        l.forEach(d => {
+            s += '<div class="card">' +
+                 '<small style="color:#38bdf8">PREMIUM ASSET</small><h3>' + d + '</h3>' +
+                 '<div class="trust-icons"><img src="https://logo.clearbit.com/sedo.com" title="Sedo Verified"> <img src="https://logo.clearbit.com/godaddy.com" title="GoDaddy Registered"> <img src="https://logo.clearbit.com/escrow.com" title="Escrow Secure"></div>' +
+                 '<a href="https://sedo.com/search/details/?domain=' + d + '" target="_blank" class="btn-buy">Buy on Sedo</a>' +
+                 '<button onclick="openOfferModal(\'' + d + '\')" class="btn-offer">Make Direct Offer</button></div>';
+        });
+        return s + '</div>';
+    }
+    box.innerHTML = c("🔥 Featured Domains", data.featured) + c("🤖 AI Infrastructure", data.ai) + c("⚙️ AI Agents", data.agents) + c("💰 Fintech & Growth", data.fintech);
+}
+// إرسال البيانات لـ Formspree
+document.getElementById('offerForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    btn.innerText = "Sending...";
+    fetch(FORM_LINK, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            Domain: document.getElementById('targetDomain').value,
+            Name: document.getElementById('userName').value,
+            Email: document.getElementById('userEmail').value,
+            Phone: document.getElementById('userPhone').value,
+            Price: document.getElementById('userPrice').value
+        })
+    }).then(() => {
+        alert("Offer Sent Successfully!");
+        closeModal();
+        e.target.reset();
+        btn.innerText = "Submit My Offer";
+    });
+});
+window.onload = renderAll;
